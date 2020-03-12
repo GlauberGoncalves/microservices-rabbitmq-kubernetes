@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+</head>
+<body>
+
+<h1>Products</h1>
+
+<ul>    
+    {% for p in prodocts %}
+        <a href="/products/{{ p.uuid}}">{{ p.product }} - {{ p.price }}</a>
+        <br>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
