@@ -2,7 +2,7 @@ from model import Product, Order
 from flask import jsonify
 import requests
 
-PRODUCTS_URL = "http://localhost:3333/products/"
+PRODUCTS_URL = os.getenv('PRODUCT_URL')
 
 
 class ProductService():
@@ -11,7 +11,7 @@ class ProductService():
 
     def find_one(self, uuid):
         try:
-            r = requests.get(url=PRODUCTS_URL + uuid)
+            r = requests.get(url=PRODUCTS_URL + "/products/{}".format(uuid))
             return r.json()
         except:
             print("It's not possible access products microservice")
