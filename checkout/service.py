@@ -1,6 +1,7 @@
 from model import Product, Order
 from flask import jsonify
 import requests
+import os
 
 PRODUCTS_URL = os.getenv('PRODUCT_URL')
 
